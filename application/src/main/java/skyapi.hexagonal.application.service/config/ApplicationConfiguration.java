@@ -1,9 +1,9 @@
 package skyapi.hexagonal.application.service.config;
 
-import com.Sky.SkyApi.application.adapter.UserServiceAdapter;
-import com.Sky.SkyApi.domain.ports.UserPersistencePort;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import skyapi.hexagonal.application.service.adapter.UserServiceAdapter;
+import skyapi.hexagonal.domain.ports.UserPersistencePort;
 
 @Configuration
 public class ApplicationConfiguration {

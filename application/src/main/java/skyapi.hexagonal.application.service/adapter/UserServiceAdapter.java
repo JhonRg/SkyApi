@@ -1,9 +1,9 @@
 package skyapi.hexagonal.application.service.adapter;
 
-import com.Sky.SkyApi.domain.ports.UserPersistencePort;
 import org.springframework.beans.factory.annotation.Autowired;
 import skyapi.hexagonal.application.service.api.UserService;
 import skyapi.hexagonal.domain.model.User;
+import skyapi.hexagonal.domain.ports.UserPersistencePort;
 
 import java.util.List;
 
