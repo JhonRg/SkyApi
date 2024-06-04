@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.RestController;
 import skyapi.hexagonal.application.service.adapter.UserServiceAdapter;
 import skyapi.hexagonal.domain.model.User;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController

@@ -9,7 +9,7 @@ import java.util.List;
 
 public class UserServiceAdapter implements UserService {
 
-    private UserPersistencePort userPersistencePort;
+    private final UserPersistencePort userPersistencePort;
 
     @Autowired
     public UserServiceAdapter(UserPersistencePort userPersistencePort) {

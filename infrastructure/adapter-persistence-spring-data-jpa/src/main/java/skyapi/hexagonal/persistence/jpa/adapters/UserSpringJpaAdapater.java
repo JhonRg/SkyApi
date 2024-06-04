@@ -1,13 +1,14 @@
 package skyapi.hexagonal.persistence.jpa.adapters;
 
-import com.Sky.SkyApi.domain.ports.UserPersistencePort;
 import skyapi.hexagonal.domain.model.User;
+import skyapi.hexagonal.domain.ports.UserPersistencePort;
 import skyapi.hexagonal.persistence.jpa.entities.UserEntity;
 import skyapi.hexagonal.persistence.jpa.repositories.UserRepository;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class UserSpringJpaAdapater implements UserPersistencePort {
 
@@ -24,8 +25,6 @@ public class UserSpringJpaAdapater implements UserPersistencePort {
     @Override
     public List<User> readUsers() {
         List<UserEntity> userEntities = userRepository.findAll();
-        List<User> users = new ArrayList<>();
-        userEntities.forEach(userEntity -> {users.add(userEntity.toUser());});
-        return users;
+        return userEntities.stream().map(UserEntity::toUser).collect(Collectors.toList());
     }
 }
