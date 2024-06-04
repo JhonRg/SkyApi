@@ -11,15 +11,14 @@ import java.util.List;
 @RestController
 public class UserControllerImpl implements UserController {
 
-    private UserServiceAdapter userServiceAdapter;
+    private final UserServiceAdapter userServiceAdapter;
     @Autowired
     public UserControllerImpl(UserServiceAdapter userServiceAdapter) {
         this.userServiceAdapter = userServiceAdapter;
     }
     @Override
     public List<User> getUsers() {
-        List<User> users = new ArrayList();
-        userServiceAdapter.readUsers().forEach(user -> users.add(user));
+        return userServiceAdapter.readUsers();
     }
 
     @Override
