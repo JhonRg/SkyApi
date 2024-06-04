@@ -1,0 +1,39 @@
+#Servicios que queremos dockerizar
+services:
+  #Nombre del servicio a dockerizar Ref.to-> spring.application.name
+  sky_api:
+    #Direccion/URL donde se aloja el dockerfile
+    #Redirección de puertos/Expose
+    build: .
+    #Variables de entorno para del dockerfile - Permite reemplazar las variables de entorno del IDE
+      #- "8080:8080"
+    environment:
+      #url Ref.to->Dirección bd en el container
+      #En caso de no existir la BBDD la creamos configurando el TimeZone
+      DB_URL: jdbc:mysql://sky_db:3306/sky_api?createDatabaseIfNotExist=true&serverTimeZone=UTC
+      DB_USER_NAME: 1234
+      BD_PASSWORD: 1234
+    ports:
+      - "8080:8080"
+    restart: always
+    #Dependencias que cumplir antes de levantar el servicio
+    depends_on:
+      #Imagen de la dependencia: Database
+        sky_db:
+          condition: service_healthy
+  #Imagen de la base de datos
+  sky_db:
+    image: mysql:8.0.33
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_PASSWORD: 1234
+      MYSQL_DATABASE: sky_db
+    restart: always
+    #Pruebas de salud para el rendimiento del servicio.
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 10s
+      retries: 6
+
