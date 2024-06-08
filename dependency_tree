@@ -1,0 +1,207 @@
+Reactor Build Order:
+[INFO]
+[INFO] skyapi-hexagonal-architecture-poc                                  [pom]
+[INFO] domain                                                             [jar]
+[INFO] infrastructure                                                     [pom]
+[INFO] adapter-persistence-spring-data-jpa                                [jar]
+[INFO] application                                                        [jar]
+[INFO] adapter-rest                                                       [jar]
+[INFO] bootloader                                                         [jar]
+[INFO]
+[INFO] ------------< skyapi.hexagonal:hexagonal-architecture-poc >-------------
+[INFO] Building skyapi-hexagonal-architecture-poc 0.0.1-SNAPSHOT          [1/7]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO]
+[INFO] --- dependency:3.6.1:tree (default-cli) @ hexagonal-architecture-poc ---
+[INFO] skyapi.hexagonal:hexagonal-architecture-poc:pom:0.0.1-SNAPSHOT
+[INFO]
+[INFO]
+[INFO] ----------------------< skyapi.hexagonal:domain >-----------------------
+[INFO] Building domain 0.0.1-SNAPSHOT                                     [2/7]
+[INFO]   from domain\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- dependency:3.6.1:tree (default-cli) @ domain ---
+[INFO] skyapi.hexagonal:domain:jar:0.0.1-SNAPSHOT
+[INFO] \- org.projectlombok:lombok:jar:1.18.32:compile
+[INFO]
+[INFO] ------------------< skyapi.hexagonal:infrastructure >-------------------
+[INFO] Building infrastructure 0.0.1-SNAPSHOT                             [3/7]
+[INFO]   from infrastructure\pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO]
+[INFO] --- dependency:3.6.1:tree (default-cli) @ infrastructure ---
+[INFO] skyapi.hexagonal:infrastructure:pom:0.0.1-SNAPSHOT
+[INFO]
+[INFO] --------< skyapi.hexagonal:adapter-persistence-spring-data-jpa >--------
+[INFO] Building adapter-persistence-spring-data-jpa 0.0.1-SNAPSHOT        [4/7]
+[INFO]   from infrastructure\adapter-persistence-spring-data-jpa\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- dependency:3.6.1:tree (default-cli) @ adapter-persistence-spring-data-jpa ---
+[INFO] skyapi.hexagonal:adapter-persistence-spring-data-jpa:jar:0.0.1-SNAPSHOT
+[INFO] +- skyapi.hexagonal:domain:jar:0.0.1-SNAPSHOT:compile
+[INFO] +- org.springframework:spring-context:jar:6.1.8:compile
+[INFO] |  +- org.springframework:spring-aop:jar:6.1.8:compile
+[INFO] |  +- org.springframework:spring-beans:jar:6.1.8:compile
+[INFO] |  +- org.springframework:spring-core:jar:6.1.8:compile
+[INFO] |  |  \- org.springframework:spring-jcl:jar:6.1.8:compile
+[INFO] |  +- org.springframework:spring-expression:jar:6.1.8:compile
+[INFO] |  \- io.micrometer:micrometer-observation:jar:1.12.6:compile
+[INFO] |     \- io.micrometer:micrometer-commons:jar:1.12.6:compile
+[INFO] +- org.springframework.boot:spring-boot-starter-data-jpa:jar:3.3.0:compile
+[INFO] |  +- org.springframework.boot:spring-boot-starter-aop:jar:3.3.0:compile
+[INFO] |  |  +- org.springframework.boot:spring-boot-starter:jar:3.3.0:compile
+[INFO] |  |  |  +- org.springframework.boot:spring-boot:jar:3.3.0:compile
+[INFO] |  |  |  +- org.springframework.boot:spring-boot-autoconfigure:jar:3.3.0:compile
+[INFO] |  |  |  +- org.springframework.boot:spring-boot-starter-logging:jar:3.3.0:compile
+[INFO] |  |  |  |  +- ch.qos.logback:logback-classic:jar:1.5.6:compile
+[INFO] |  |  |  |  |  \- ch.qos.logback:logback-core:jar:1.5.6:compile
+[INFO] |  |  |  |  +- org.apache.logging.log4j:log4j-to-slf4j:jar:2.23.1:compile
+[INFO] |  |  |  |  |  \- org.apache.logging.log4j:log4j-api:jar:2.23.1:compile
+[INFO] |  |  |  |  \- org.slf4j:jul-to-slf4j:jar:2.0.13:compile
+[INFO] |  |  |  \- org.yaml:snakeyaml:jar:2.2:compile
+[INFO] |  |  \- org.aspectj:aspectjweaver:jar:1.9.22:compile
+[INFO] |  +- org.springframework.boot:spring-boot-starter-jdbc:jar:3.3.0:compile
+[INFO] |  |  +- com.zaxxer:HikariCP:jar:5.1.0:compile
+[INFO] |  |  \- org.springframework:spring-jdbc:jar:6.1.8:compile
+[INFO] |  +- org.hibernate.orm:hibernate-core:jar:6.5.2.Final:compile
+[INFO] |  |  +- jakarta.persistence:jakarta.persistence-api:jar:3.1.0:compile
+[INFO] |  |  +- jakarta.transaction:jakarta.transaction-api:jar:2.0.1:compile
+[INFO] |  |  +- org.jboss.logging:jboss-logging:jar:3.5.0.Final:runtime
+[INFO] |  |  +- org.hibernate.common:hibernate-commons-annotations:jar:6.0.6.Final:runtime
+[INFO] |  |  +- io.smallrye:jandex:jar:3.1.2:runtime
+[INFO] |  |  +- com.fasterxml:classmate:jar:1.5.1:runtime
+[INFO] |  |  +- net.bytebuddy:byte-buddy:jar:1.14.15:runtime
+[INFO] |  |  +- jakarta.xml.bind:jakarta.xml.bind-api:jar:4.0.0:runtime
+[INFO] |  |  |  \- jakarta.activation:jakarta.activation-api:jar:2.1.0:runtime
+[INFO] |  |  +- org.glassfish.jaxb:jaxb-runtime:jar:4.0.2:runtime
+[INFO] |  |  |  \- org.glassfish.jaxb:jaxb-core:jar:4.0.2:runtime
+[INFO] |  |  |     +- org.eclipse.angus:angus-activation:jar:2.0.0:runtime
+[INFO] |  |  |     +- org.glassfish.jaxb:txw2:jar:4.0.2:runtime
+[INFO] |  |  |     \- com.sun.istack:istack-commons-runtime:jar:4.1.1:runtime
+[INFO] |  |  +- jakarta.inject:jakarta.inject-api:jar:2.0.1:runtime
+[INFO] |  |  \- org.antlr:antlr4-runtime:jar:4.13.0:compile
+[INFO] |  +- org.springframework.data:spring-data-jpa:jar:3.3.0:compile
+[INFO] |  |  +- org.springframework.data:spring-data-commons:jar:3.3.0:compile
+[INFO] |  |  +- org.springframework:spring-orm:jar:6.1.7:compile
+[INFO] |  |  +- org.springframework:spring-tx:jar:6.1.7:compile
+[INFO] |  |  +- jakarta.annotation:jakarta.annotation-api:jar:2.0.0:compile
+[INFO] |  |  \- org.slf4j:slf4j-api:jar:2.0.2:compile
+[INFO] |  \- org.springframework:spring-aspects:jar:6.1.8:compile
+[INFO] +- com.h2database:h2:jar:2.2.224:test
+[INFO] \- org.projectlombok:lombok:jar:1.18.6:provided
+[INFO]
+[INFO] --------------------< skyapi.hexagonal:application >--------------------
+[INFO] Building application 0.0.1-SNAPSHOT                                [5/7]
+[INFO]   from application\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- dependency:3.6.1:tree (default-cli) @ application ---
+[INFO] skyapi.hexagonal:application:jar:0.0.1-SNAPSHOT
+[INFO] +- skyapi.hexagonal:domain:jar:0.0.1-SNAPSHOT:compile
+[INFO] |  \- org.projectlombok:lombok:jar:1.18.32:compile
+[INFO] \- org.springframework:spring-context:jar:6.1.8:compile
+[INFO]    +- org.springframework:spring-aop:jar:6.1.8:compile
+[INFO]    +- org.springframework:spring-beans:jar:6.1.8:compile
+[INFO]    +- org.springframework:spring-core:jar:6.1.8:compile
+[INFO]    |  \- org.springframework:spring-jcl:jar:6.1.8:compile
+[INFO]    +- org.springframework:spring-expression:jar:6.1.8:compile
+[INFO]    \- io.micrometer:micrometer-observation:jar:1.12.6:compile
+[INFO]       \- io.micrometer:micrometer-commons:jar:1.12.6:compile
+[INFO]
+[INFO] -------------------< skyapi.hexagonal:adapter-rest >--------------------
+[INFO] Building adapter-rest 0.0.1-SNAPSHOT                               [6/7]
+[INFO]   from infrastructure\adapter-rest\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- dependency:3.6.1:tree (default-cli) @ adapter-rest ---
+[INFO] skyapi.hexagonal:adapter-rest:jar:0.0.1-SNAPSHOT
+[INFO] +- skyapi.hexagonal:application:jar:0.0.1-SNAPSHOT:compile
+[INFO] |  \- skyapi.hexagonal:domain:jar:0.0.1-SNAPSHOT:compile
+[INFO] |     \- org.projectlombok:lombok:jar:1.18.32:compile
+[INFO] +- org.springframework:spring-context:jar:6.1.8:compile
+[INFO] |  +- org.springframework:spring-aop:jar:6.1.8:compile
+[INFO] |  +- org.springframework:spring-beans:jar:6.1.8:compile
+[INFO] |  +- org.springframework:spring-core:jar:6.1.8:compile
+[INFO] |  |  \- org.springframework:spring-jcl:jar:6.1.8:compile
+[INFO] |  +- org.springframework:spring-expression:jar:6.1.8:compile
+[INFO] |  \- io.micrometer:micrometer-observation:jar:1.12.6:compile
+[INFO] |     \- io.micrometer:micrometer-commons:jar:1.12.6:compile
+[INFO] \- org.springframework:spring-web:jar:6.1.8:compile
+[INFO]
+[INFO] --------------------< skyapi.hexagonal:bootloader >---------------------
+[INFO] Building bootloader 0.0.1-SNAPSHOT                                 [7/7]
+[INFO]   from bootloader\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- dependency:3.6.1:tree (default-cli) @ bootloader ---
+[INFO] skyapi.hexagonal:bootloader:jar:0.0.1-SNAPSHOT
+[INFO] +- skyapi.hexagonal:adapter-persistence-spring-data-jpa:jar:0.0.1-SNAPSHOT:compile
+[INFO] |  \- org.springframework.boot:spring-boot-starter-data-jpa:jar:3.3.0:compile
+[INFO] |     +- org.springframework.boot:spring-boot-starter-aop:jar:3.3.0:compile
+[INFO] |     |  \- org.aspectj:aspectjweaver:jar:1.9.22:compile
+[INFO] |     +- org.springframework.boot:spring-boot-starter-jdbc:jar:3.3.0:compile
+[INFO] |     |  +- com.zaxxer:HikariCP:jar:5.1.0:compile
+[INFO] |     |  \- org.springframework:spring-jdbc:jar:6.1.8:compile
+[INFO] |     +- org.hibernate.orm:hibernate-core:jar:6.5.2.Final:compile
+[INFO] |     |  +- jakarta.persistence:jakarta.persistence-api:jar:3.1.0:compile
+[INFO] |     |  +- jakarta.transaction:jakarta.transaction-api:jar:2.0.1:compile
+[INFO] |     |  +- org.jboss.logging:jboss-logging:jar:3.5.0.Final:runtime
+[INFO] |     |  +- org.hibernate.common:hibernate-commons-annotations:jar:6.0.6.Final:runtime
+[INFO] |     |  +- io.smallrye:jandex:jar:3.1.2:runtime
+[INFO] |     |  +- com.fasterxml:classmate:jar:1.5.1:runtime
+[INFO] |     |  +- net.bytebuddy:byte-buddy:jar:1.14.15:runtime
+[INFO] |     |  +- jakarta.xml.bind:jakarta.xml.bind-api:jar:4.0.0:runtime
+[INFO] |     |  |  \- jakarta.activation:jakarta.activation-api:jar:2.1.0:runtime
+[INFO] |     |  +- org.glassfish.jaxb:jaxb-runtime:jar:4.0.2:runtime
+[INFO] |     |  |  \- org.glassfish.jaxb:jaxb-core:jar:4.0.2:runtime
+[INFO] |     |  |     +- org.eclipse.angus:angus-activation:jar:2.0.0:runtime
+[INFO] |     |  |     +- org.glassfish.jaxb:txw2:jar:4.0.2:runtime
+[INFO] |     |  |     \- com.sun.istack:istack-commons-runtime:jar:4.1.1:runtime
+[INFO] |     |  +- jakarta.inject:jakarta.inject-api:jar:2.0.1:runtime
+[INFO] |     |  \- org.antlr:antlr4-runtime:jar:4.13.0:compile
+[INFO] |     +- org.springframework.data:spring-data-jpa:jar:3.3.0:compile
+[INFO] |     |  +- org.springframework.data:spring-data-commons:jar:3.3.0:compile
+[INFO] |     |  +- org.springframework:spring-orm:jar:6.1.7:compile
+[INFO] |     |  +- org.springframework:spring-tx:jar:6.1.7:compile
+[INFO] |     |  \- org.slf4j:slf4j-api:jar:2.0.2:compile
+[INFO] |     \- org.springframework:spring-aspects:jar:6.1.8:compile
+[INFO] +- skyapi.hexagonal:adapter-rest:jar:0.0.1-SNAPSHOT:compile
+[INFO] |  +- skyapi.hexagonal:application:jar:0.0.1-SNAPSHOT:compile
+[INFO] |  \- org.springframework:spring-web:jar:6.1.8:compile
+[INFO] |     +- org.springframework:spring-beans:jar:6.1.8:compile
+[INFO] |     \- io.micrometer:micrometer-observation:jar:1.12.6:compile
+[INFO] |        \- io.micrometer:micrometer-commons:jar:1.12.6:compile
+[INFO] +- skyapi.hexagonal:domain:jar:0.0.1-SNAPSHOT:compile
+[INFO] |  \- org.projectlombok:lombok:jar:1.18.32:compile
+[INFO] +- org.springframework.boot:spring-boot-starter:jar:3.3.0:compile
+[INFO] |  +- org.springframework.boot:spring-boot:jar:3.3.0:compile
+[INFO] |  |  \- org.springframework:spring-context:jar:6.1.8:compile
+[INFO] |  +- org.springframework.boot:spring-boot-autoconfigure:jar:3.3.0:compile
+[INFO] |  +- org.springframework.boot:spring-boot-starter-logging:jar:3.3.0:compile
+[INFO] |  |  +- ch.qos.logback:logback-classic:jar:1.5.6:compile
+[INFO] |  |  |  \- ch.qos.logback:logback-core:jar:1.5.6:compile
+[INFO] |  |  +- org.apache.logging.log4j:log4j-to-slf4j:jar:2.23.1:compile
+[INFO] |  |  |  \- org.apache.logging.log4j:log4j-api:jar:2.23.1:compile
+[INFO] |  |  \- org.slf4j:jul-to-slf4j:jar:2.0.13:compile
+[INFO] |  +- jakarta.annotation:jakarta.annotation-api:jar:2.1.1:compile
+[INFO] |  +- org.springframework:spring-core:jar:6.1.8:compile
+[INFO] |  |  \- org.springframework:spring-jcl:jar:6.1.8:compile
+[INFO] |  \- org.yaml:snakeyaml:jar:2.2:compile
+[INFO] \- org.springframework.boot:spring-boot-starter-web:jar:3.3.0:compile
+[INFO]    +- org.springframework.boot:spring-boot-starter-json:jar:3.3.0:compile
+[INFO]    |  +- com.fasterxml.jackson.core:jackson-databind:jar:2.17.1:compile
+[INFO]    |  |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.17.1:compile
+[INFO]    |  |  \- com.fasterxml.jackson.core:jackson-core:jar:2.17.1:compile
+[INFO]    |  +- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:jar:2.17.1:compile
+[INFO]    |  +- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:2.17.1:compile
+[INFO]    |  \- com.fasterxml.jackson.module:jackson-module-parameter-names:jar:2.17.1:compile
+[INFO]    +- org.springframework.boot:spring-boot-starter-tomcat:jar:3.3.0:compile
+[INFO]    |  +- org.apache.tomcat.embed:tomcat-embed-core:jar:10.1.24:compile
+[INFO]    |  +- org.apache.tomcat.embed:tomcat-embed-el:jar:10.1.24:compile
+[INFO]    |  \- org.apache.tomcat.embed:tomcat-embed-websocket:jar:10.1.24:compile
+[INFO]    \- org.springframework:spring-webmvc:jar:6.1.8:compile
+[INFO]       +- org.springframework:spring-aop:jar:6.1.8:compile
+[INFO]       \- org.springframework:spring-expression:jar:6.1.8:compile

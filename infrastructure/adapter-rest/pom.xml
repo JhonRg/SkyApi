@@ -14,12 +14,6 @@
     <description>adapter-rest</description>
 
     <dependencies>
-        <!-- Inversion de dependcias de DDD para sus capas -->
-        <dependency>
-            <groupId>skyapi.hexagonal</groupId>
-            <artifactId>application</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>

@@ -10,10 +10,10 @@
     </parent>
 
     <artifactId>infrastructure</artifactId>
-    <packaging>pom</packaging>
-
     <name>infrastructure</name>
     <description>infrastructure</description>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
     <modules>
         <module>adapter-persistence-spring-data-jpa</module>
@@ -23,7 +23,45 @@
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
+        <lombok.version>1.18.32</lombok.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <skyapi.hexgonal.application.version>0.0.1-SNAPSHOT</skyapi.hexgonal.application.version>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>skyapi.hexagonal</groupId>
+            <artifactId>application</artifactId>
+            <version>${skyapi.hexgonal.application.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.11.0-M2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>5.12.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.4.0</version>
+        </dependency>
+    </dependencies>
 </project>

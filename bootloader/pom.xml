@@ -17,25 +17,26 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <adapter-jpa.version>0.0.1-SNAPSHOT</adapter-jpa.version>
-        <adapter-rest.version>0.0.1-SNAPSHOT</adapter-rest.version>
+        <skyapi.infrastructure.version>0.0.1-SNAPSHOT</skyapi.infrastructure.version>
+        <skyapi.domain.version>0.0.1-SNAPSHOT</skyapi.domain.version>
+        <skyapi.application.version>0.0.1-SNAPSHOT</skyapi.application.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>skyapi.hexagonal</groupId>
-            <artifactId>adapter-persistence-spring-data-jpa</artifactId>
-            <version>${adapter-jpa.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>skyapi.hexagonal</groupId>
-            <artifactId>adapter-rest</artifactId>
-            <version>${adapter-rest.version}</version>
+            <artifactId>infrastructure</artifactId>
+            <version>${skyapi.infrastructure.version}</version>
         </dependency>
         <dependency>
             <groupId>skyapi.hexagonal</groupId>
             <artifactId>domain</artifactId>
-            <version>${adapter-rest.version}</version>
+            <version>${skyapi.domain.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>skyapi.hexagonal</groupId>
+            <artifactId>application</artifactId>
+            <version>${skyapi.application.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

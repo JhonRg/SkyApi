@@ -1,0 +1,4 @@
+INSERT INTO USER VALUES(1, "jonrg", "jonrg", CURRENT_DATE);
+INSERT INTO USER VALUES(2, "eureka", "eureka", CURRENT_DATE);
+INSERT INTO USER VALUES(3, "nirvash", "nirvash", CURRENT_DATE);
+INSERT INTO USER VALUES(4, "holland", "holland", CURRENT_DATE);

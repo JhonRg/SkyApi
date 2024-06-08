@@ -1,10 +1,27 @@
 package skyapi.hexagonal.infrastructure.rest.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+import skyapi.hexagonal.out.persistence.adapter.UserServiceAdapter;
 import skyapi.hexagonal.domain.model.User;
 
 import java.util.List;
 
-public interface UserController {
-    List<User> getUsers();
-    User createUser(User user);
+@RestController
+public class UserController{
+
+    private final UserServiceAdapter userServiceAdapter;
+    @Autowired
+
+    public UserController(UserServiceAdapter userServiceAdapter) {
+        this.userServiceAdapter = userServiceAdapter;
+    }
+
+    public List<User> getUsers() {
+        return null;
+    }
+
+    public User createUser(User user) {
+        return null;
+    }
 }
