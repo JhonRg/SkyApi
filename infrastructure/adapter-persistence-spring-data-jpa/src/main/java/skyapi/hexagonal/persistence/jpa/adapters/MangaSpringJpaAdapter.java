@@ -23,12 +23,9 @@ public class MangaSpringJpaAdapter implements MangaRepositoryAdapter {
 
     @Override
     public Manga create(Manga manga) {
-        Manga response = Manga.builder().build();
-        Manga savedEntity;
-
         Optional<Manga> responseEntity = mangaRepository.findById(manga.getId());
         if(responseEntity.isEmpty()){
-            return responseEntity.orElse(Manga.builder().build());
+            return mangaRepository.save(manga);
         }else{
             throw new EntityExistsException("Manga with id " + manga.getId() + " already exists");
         }
