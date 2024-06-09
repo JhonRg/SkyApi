@@ -6,23 +6,24 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name="EDITORIALS")
-public class Editorial {
+@Table(name="PAGES")
+public class Page {
     @Id
     @GeneratedValue
     @Column(name="ID")
     private Long id;
 
-    @Column(name="NAME")
-    private String name;
+    @Column(name="PAGE_NUMBERS")
+    private Integer pageNumber;
 
-    @OneToMany(targetEntity = Manga.class, cascade = CascadeType.ALL)
-    private List<Manga> publishedMangas;
+    @Column(name="IMAGE_URL")
+    private String imageUrl;
+
+    @ManyToOne(targetEntity=Chapter.class, fetch=FetchType.EAGER)
+    private Chapter chapter;
 }

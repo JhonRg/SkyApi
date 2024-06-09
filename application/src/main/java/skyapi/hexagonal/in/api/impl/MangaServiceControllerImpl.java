@@ -4,33 +4,35 @@ import org.springframework.stereotype.Component;
 import skyapi.hexagonal.domain.model.Manga;
 import skyapi.hexagonal.dto.MangaDTO;
 import skyapi.hexagonal.in.api.MangaServiceController;
-import skyapi.hexagonal.in.service.MangaService;
 import skyapi.hexagonal.in.service.impl.MangaServiceImpl;
-import skyapi.hexagonal.mappers.GenericMapper;
-import skyapi.hexagonal.out.persistence.adapter.MangaPersistenceAdapter;
-import skyapi.hexagonal.out.persistence.api.MangaRepositoryAdapter;
+import skyapi.hexagonal.mappers.MangaMapper;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
 public class MangaServiceControllerImpl implements MangaServiceController {
 
-    MangaService service;
+    MangaServiceImpl service;
 
-    public MangaServiceControllerImpl(MangaService service) {this.service = service;}
+    public MangaServiceControllerImpl(MangaServiceImpl service) {this.service = service;}
     @Override
-    public List<Manga> listMangas() {
-        return service.listMangas();
+    public List<MangaDTO> listMangas() {
+        List<MangaDTO> response = new ArrayList<>();
+
+        service.listMangas().forEach(x-> response.add(MangaMapper.fromModelToDto(x)));
+
+        return response;
     }
 
     @Override
-    public Manga getManga(Long id) {
-        return service.getManga(id);
+    public MangaDTO getManga(Long id) {
+        return MangaMapper.fromModelToDto(service.getManga(id));
     }
 
     @Override
-    public Manga addManga(MangaDTO manga) {
-        Manga model = GenericMapper.toModel(Manga.builder().build(), manga);
-        return service.addManga(model);
+    public MangaDTO addManga(MangaDTO manga) {
+        Manga savedModel = service.addManga(MangaMapper.fromDtoToModel(manga));
+        return MangaMapper.fromModelToDto(savedModel);
     }
 }

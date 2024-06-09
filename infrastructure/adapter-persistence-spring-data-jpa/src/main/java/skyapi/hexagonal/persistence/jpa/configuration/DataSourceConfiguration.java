@@ -9,7 +9,7 @@ import skyapi.hexagonal.persistence.jpa.repositories.MangaRepository;
 import javax.sql.DataSource;
 
 @Configuration
-@ComponentScan(basePackageClasses = {UserRepository.class, MangaRepository.class})
+@ComponentScan(basePackageClasses = {MangaRepository.class})
 public class DataSourceConfiguration {
     /**
      * Defining the data source programmatically by using the utility DataSourceBuilder()

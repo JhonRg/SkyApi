@@ -3,14 +3,13 @@ package skyapi.hexagonal.in.service.impl;
 
 import org.springframework.stereotype.Service;
 import skyapi.hexagonal.domain.model.Manga;
+import skyapi.hexagonal.domain.ports.in.MangaServiceController;
 import skyapi.hexagonal.domain.ports.out.MangaPersistencePort;
-import skyapi.hexagonal.dto.MangaDTO;
-import skyapi.hexagonal.in.service.MangaService;
 
 import java.util.List;
 
 @Service
-public class MangaServiceImpl implements MangaService {
+public class MangaServiceImpl implements MangaServiceController {
 
     MangaPersistencePort repository;
     public MangaServiceImpl(MangaPersistencePort repository){this.repository = repository;}

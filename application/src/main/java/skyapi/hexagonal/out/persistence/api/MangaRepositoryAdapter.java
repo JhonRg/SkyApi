@@ -1,7 +1,6 @@
 package skyapi.hexagonal.out.persistence.api;
 
 import skyapi.hexagonal.domain.model.Manga;
-import skyapi.hexagonal.dto.MangaDTO;
 
 import java.util.List;
 

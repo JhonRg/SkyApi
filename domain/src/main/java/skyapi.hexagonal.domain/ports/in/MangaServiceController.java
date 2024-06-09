@@ -4,7 +4,7 @@ import skyapi.hexagonal.domain.model.Manga;
 
 import java.util.List;
 
-public interface MangaController {
+public interface MangaServiceController {
     List<Manga> listMangas();
     Manga getManga(Long id);
     Manga addManga(Manga manga);
