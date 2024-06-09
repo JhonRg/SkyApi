@@ -53,10 +53,11 @@ public class Manga {
     public Long getAuthorId(){
         return author.getId();
     }
-    public List<Volume> getVolumes(){
+    public List<Long> getVolumesIds(){
         List<Long> volumeIds = new ArrayList<>();
         volume.forEach(x->{
             volumeIds.add(x.getId());
         });
+        return volumeIds;
     }
 }

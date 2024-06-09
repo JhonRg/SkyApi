@@ -11,20 +11,18 @@ import java.util.List;
 //@RequestMapping
 public class MangaControllerImpl implements MangaController{
 
-    private MangaServiceController mangaController;
+    private final MangaServiceController mangaController;
     public MangaControllerImpl(MangaServiceController mangaController){
         this.mangaController = mangaController;
     }
     @GetMapping("/library")
     public ResponseEntity<List<MangaDTO>> listMangas() {
-        ResponseEntity<List<MangaDTO>> response = ResponseEntity.ok(mangaController.listMangas());
-        return response;
+        return ResponseEntity.ok(mangaController.listMangas());
     }
 
     @GetMapping("/manga/{id}")
     public ResponseEntity<MangaDTO> getManga(@RequestParam Long id) {
-        ResponseEntity<MangaDTO> response = ResponseEntity.ok(mangaController.getManga(id));
-        return response;
+        return ResponseEntity.ok(mangaController.getManga(id));
     }
 
     @PostMapping("/addManga")

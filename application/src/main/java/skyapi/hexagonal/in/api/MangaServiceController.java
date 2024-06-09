@@ -7,7 +7,7 @@ import java.util.List;
 
 @Component
 public interface MangaServiceController  {
-    public List<MangaDTO> listMangas();
-    public MangaDTO getManga(Long id);
-    public MangaDTO addManga(MangaDTO manga);
+    List<MangaDTO> listMangas();
+    MangaDTO getManga(Long id);
+    MangaDTO addManga(MangaDTO manga);
 }

@@ -14,9 +14,9 @@ public class MangaTestCase {
                 .id((long)id_random)
                 .title("My Hero Academia")
                 .description("Manga de super héroes")
-                .editorial(Editorial.builder().id(1).name("Planeta Cómic").build())
-                .author(Author.builder().id(1).firstname("Kohei").lastname("Horikoshi").build())
-                .category(MangaCategory.builder().id(1).name("Shonen").build())
+                .editorial(Editorial.builder().id(1L).name("Planeta Cómic").build())
+                .author(Author.builder().id(1L).firstname("Kohei").lastname("Horikoshi").build())
+                .category(MangaCategory.builder().id(1L).name("Shonen").build())
                 .volume(null)
                 .build();
     }

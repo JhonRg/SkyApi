@@ -1,6 +1,5 @@
 package skyapi.hexagonal.mappers;
 
-import org.springframework.beans.BeanUtils;
 import skyapi.hexagonal.domain.model.*;
 import skyapi.hexagonal.dto.MangaDTO;
 
@@ -18,14 +17,14 @@ public class MangaMapper implements GenericMapper<Manga, MangaDTO> {
 
     /**
      *
-     * @param dto
+     * @param dto dto object who wanna copy
      * @return Equivalent model or a void one if dto its null
      */
     public static Manga fromDtoToModel(MangaDTO dto) {
         Manga response = Manga.builder().build();
         if(dto == null) return response;
         GenericMapper.fromDtoToModel(response, dto);
-        mapMangaAggregateFromModel(dto, response);
+        mapMangaAggregateFromDto(response, dto);
         return response;
     }
     private static void mapMangaAggregateFromModel(MangaDTO dto, Manga model){
@@ -82,23 +81,23 @@ public class MangaMapper implements GenericMapper<Manga, MangaDTO> {
         }
     }
     private static void mapEditorial(MangaDTO dto, Manga model){
-        dto.setEditorialId(model.getEditorial().getId());
+        dto.setEditorialId(model.getEditorialId());
     }
     private static void mapVolumes(MangaDTO dto, Manga model){
         if(dto.getVolumeIds()==null){
             dto.setVolumeIds(new ArrayList<>());
-            model.getVolumes().forEach(x -> dto.getVolumeIds().add(x.getId()));
+            model.getVolume().forEach(x -> dto.getVolumeIds().add(x.getId()));
         } else if (model.getVolume()==null) {
             model.setVolume(new ArrayList<>());
             dto.getVolumeIds().forEach(x-> {
                 Volume volume = Volume.builder().id(x).build();
-                model.getVolumes().add(volume);
+                model.getVolume().add(volume);
             });
         }
     }
     private static void mapAuthor(MangaDTO dto, Manga model){
         if(dto.getAuthorId()==null){
-            dto.setAuthorId(model.getAuthor().getId());
+            dto.setAuthorId(model.getAuthorId());
         }else if (model.getAuthor()==null) {
             model.setAuthor(Author.builder().id(dto.getId()).build());
         }
