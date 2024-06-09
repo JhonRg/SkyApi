@@ -1,18 +1,17 @@
 package skyapi.hexagonal.persistence.adapters;
 
-import jakarta.persistence.EntityExistsException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import skyapi.hexagonal.common.MangaTestCase;
 import skyapi.hexagonal.domain.model.Manga;
+import skyapi.hexagonal.dto.MangaDTO;
 import skyapi.hexagonal.persistence.jpa.adapters.MangaSpringJpaAdapter;
-import skyapi.hexagonal.persistence.jpa.entities.MangaEntity;
 import skyapi.hexagonal.persistence.jpa.mappers.GenericMapper;
-import skyapi.hexagonal.persistence.jpa.mappers.MangaMapper;
 import skyapi.hexagonal.persistence.jpa.repositories.MangaRepository;
 
+import javax.persistence.EntityExistsException;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -40,19 +39,21 @@ public class MangaSpringJpaAdapterTest extends MangaTestCase {
      */
     @Test
     public void create_succes(){
-        Manga response = Manga.builder().build();
-        Manga mangaToSave = getMangaForTest();
-        MangaEntity entity = MangaMapper.fromModelToEntity(mangaToSave);
+        Manga response;
+        Manga manga = getMangaForTest();
+        MangaDTO mangaToSave = getMangaDTOForTest();
+
         //Mock the db response & prepare the data
         Mockito.when(repository.findById(mangaToSave.getId())).thenReturn(Optional.empty());
-        Mockito.when(repository.save(any(MangaEntity.class))).thenReturn(entity);
+        Mockito.when(repository.save(any(Manga.class))).thenReturn(manga);
         //Call the method to test
-        response = tested.create(mangaToSave);
+        response = tested.create(manga);
         //Verify Expect
-        verify(repository).findById(entity.getId());
-        verify(repository).save(any(MangaEntity.class));
+        verify(repository).findById(mangaToSave.getId());
+        verify(repository).save(any(Manga.class));
         //Verify Results
-        Assertions.assertEquals(mangaToSave, response);
+        Manga expectedManga = GenericMapper.toModel(Manga.builder().build(), mangaToSave);
+        Assertions.assertEquals(expectedManga, response);
     }
     /**
      * Test 02:
@@ -65,13 +66,14 @@ public class MangaSpringJpaAdapterTest extends MangaTestCase {
      */
     @Test
     public void create_shouldThrowEntityExistsException(){
-        Manga mangaToSave = getMangaForTest();
-        MangaEntity entity = MangaMapper.fromModelToEntity(mangaToSave);
-        when(repository.findById(mangaToSave.getId())).thenReturn(Optional.of(entity));
-        EntityExistsException exception = assertThrows(EntityExistsException.class, () -> tested.create(mangaToSave));
+        Manga savedManga = getMangaForTest();
+        MangaDTO mangaToSave = GenericMapper.fromModel(MangaDTO.builder().build(), savedManga);
+
+        when(repository.findById(mangaToSave.getId())).thenReturn(Optional.of(savedManga));
+        EntityExistsException exception = assertThrows(EntityExistsException.class, () -> tested.create(savedManga));
         //Expect
         verify(repository).findById(mangaToSave.getId());
-        verify(repository, never()).save(any(MangaEntity.class));
+        verify(repository, never()).save(any(Manga.class));
 
         Assertions.assertEquals(exception.getMessage(), "Manga with id " + mangaToSave.getId() + " already exists");
     }

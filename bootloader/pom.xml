@@ -10,6 +10,7 @@
     </parent>
 
     <artifactId>bootloader</artifactId>
+    <packaging>jar</packaging>
     <name>bootloader</name>
     <description>bootloader</description>
 

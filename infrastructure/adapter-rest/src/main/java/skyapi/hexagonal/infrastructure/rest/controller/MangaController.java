@@ -3,7 +3,8 @@ package skyapi.hexagonal.infrastructure.rest.controller;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import skyapi.hexagonal.domain.model.Manga;
-import skyapi.hexagonal.in.controllerRest.MangaRestController;
+import skyapi.hexagonal.dto.MangaDTO;
+import skyapi.hexagonal.in.api.MangaServiceController;
 
 import java.util.List;
 
@@ -11,8 +12,8 @@ import java.util.List;
 //@RequestMapping
 public class MangaController {
 
-    private MangaRestController mangaController;
-    public MangaController(MangaRestController mangaController){
+    private MangaServiceController mangaController;
+    public MangaController(MangaServiceController mangaController){
         this.mangaController = mangaController;
     }
     @GetMapping("/library")
@@ -28,7 +29,7 @@ public class MangaController {
     }
 
     @PostMapping("/addManga")
-    public ResponseEntity<Manga> addManga(Manga manga) {
+    public ResponseEntity<Manga> addManga(MangaDTO manga) {
         return ResponseEntity.ok(mangaController.addManga(manga));
     }
 }

@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import skyapi.hexagonal.persistence.jpa.repositories.MangaRepository;
-import skyapi.hexagonal.persistence.jpa.repositories.UserRepository;
 
 import javax.sql.DataSource;
 

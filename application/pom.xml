@@ -17,14 +17,15 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <domain.version>0.0.1-SNAPSHOT</domain.version>
+        <skyapi.domain.version>0.0.1-SNAPSHOT</skyapi.domain.version>
+        <skyapi.infrastructure.version>0.0.1-SNAPSHOT</skyapi.infrastructure.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>skyapi.hexagonal</groupId>
             <artifactId>domain</artifactId>
-            <version>${domain.version}</version>
+            <version>${skyapi.domain.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>

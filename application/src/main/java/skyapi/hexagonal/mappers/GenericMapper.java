@@ -1,12 +1,6 @@
-package skyapi.hexagonal.persistence.jpa.mappers;
+package skyapi.hexagonal.mappers;
 
 import org.springframework.beans.BeanUtils;
-
-/**
- *  TODO: Revisar el comportamiento. No debería volver una instancia modificada del objeto
- *  Tratar de corregir para mantener la inmutabilidad de los datos.
- */
-
 
 public interface GenericMapper<E,M> {
     static <E, M> E fromModel(E entity, M model){

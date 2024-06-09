@@ -5,7 +5,7 @@ import skyapi.hexagonal.domain.model.Author;
 import skyapi.hexagonal.domain.model.Editorial;
 import skyapi.hexagonal.domain.model.Manga;
 import skyapi.hexagonal.domain.model.MangaCategory;
-import skyapi.hexagonal.persistence.jpa.entities.MangaEntity;
+import skyapi.hexagonal.dto.MangaDTO;
 
 public class MangaTestCase {
     protected Manga getMangaForTest(){
@@ -20,9 +20,9 @@ public class MangaTestCase {
                 .volume(null)
                 .build();
     }
-    protected MangaEntity getMangaEntityForTest(){
-        MangaEntity entity = MangaEntity.builder().build();
-        BeanUtils.copyProperties(getMangaForTest(), entity);
-        return entity;
+    protected MangaDTO getMangaDTOForTest(){
+        MangaDTO dto = MangaDTO.builder().build();
+        BeanUtils.copyProperties(getMangaForTest(), dto);
+        return dto;
     }
 }

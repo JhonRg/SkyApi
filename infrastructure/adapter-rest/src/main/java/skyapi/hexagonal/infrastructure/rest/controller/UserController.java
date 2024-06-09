@@ -2,8 +2,6 @@ package skyapi.hexagonal.infrastructure.rest.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
-import skyapi.hexagonal.out.persistence.adapter.UserServiceAdapter;
-import skyapi.hexagonal.domain.model.User;
 
 import java.util.List;
 
