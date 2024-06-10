@@ -1,7 +1,6 @@
 package skyapi.hexagonal.domain.service.impl;
 
 
-import org.springframework.stereotype.Service;
 import skyapi.hexagonal.domain.model.Manga;
 import skyapi.hexagonal.domain.service.MangaService;
 import skyapi.hexagonal.domain.ports.out.MangaPersistencePort;

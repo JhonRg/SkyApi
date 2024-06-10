@@ -23,11 +23,11 @@ public class MangaTestCase {
                             .lastname("test").build())
                     .volume(new ArrayList<>())
                     .editorial(Editorial.builder()
-                            .id(random.nextInt())
+                            .id(random.nextLong())
                             .name("Test Editorial")
                             .build())
                     .category(MangaCategory.builder()
-                            .id(random.nextInt())
+                            .id(random.nextLong())
                             .name("Test Category")
                             .build())
                     .build());
