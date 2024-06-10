@@ -1,14 +1,14 @@
-package skyapi.hexagonal.infrastructure.rest.controller;
+package skyapi.hexagonal.application;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import skyapi.hexagonal.application.in.api.impl.MangaServiceControllerImpl;
 import skyapi.hexagonal.domain.service.MangaService;
-import skyapi.hexagonal.domain.ports.out.MangaPersistencePort;
-import skyapi.hexagonal.domain.service.impl.MangaServiceImpl;
 
 @Configuration
 public class ApplicationConfiguration {
-
-
+    @Bean
+    public MangaServiceControllerImpl mangaServiceControllerImpl (MangaService mangaService){
+        return new MangaServiceControllerImpl(mangaService);
+    }
 }
