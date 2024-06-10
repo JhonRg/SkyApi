@@ -21,9 +21,7 @@ public class MangaPersistenceJpaAdapter implements MangaPersistencePort {
 
     @Override
     public Manga create(Manga manga) {
-        Manga response = Manga.builder().build();
-        response =  mangaRepositoryJpaAdapter.create(manga);
-        return response;
+        return mangaRepositoryJpaAdapter.create(manga);
     }
 
     @Override

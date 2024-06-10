@@ -1,12 +1,9 @@
 package skyapi.hexagonal.persistence.jpa.configuration;
 
-import org.springframework.boot.jdbc.DataSourceBuilder;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import skyapi.hexagonal.persistence.jpa.repositories.MangaRepository;
 
-import javax.sql.DataSource;
 
 @Configuration
 @ComponentScan(basePackageClasses = {MangaRepository.class})
