@@ -2,7 +2,7 @@ package skyapi.hexagonal.infrastructure.rest.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestParam;
-import skyapi.hexagonal.dto.MangaDTO;
+import skyapi.hexagonal.application.dto.MangaDTO;
 
 import java.util.List;
 
