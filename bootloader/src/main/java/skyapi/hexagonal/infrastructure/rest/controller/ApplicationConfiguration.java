@@ -10,10 +10,7 @@ import skyapi.hexagonal.domain.service.impl.MangaServiceImpl;
 @Configuration
 public class ApplicationConfiguration {
 
-    @Bean
-    public MangaServiceImpl mangaServiceImpl (MangaPersistencePort mangaPersistencePort){
-        return new MangaServiceImpl(mangaPersistencePort);
-    }
+
     @Bean
     public MangaServiceControllerImpl mangaServiceControllerImpl (MangaService mangaService){
         return new MangaServiceControllerImpl(mangaService);

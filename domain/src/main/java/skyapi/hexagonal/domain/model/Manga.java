@@ -56,9 +56,7 @@ public class Manga {
     }
     public List<Long> getVolumesIds(){
         List<Long> volumeIds = new ArrayList<>();
-        volume.forEach(x->{
-            volumeIds.add(x.getId());
-        });
+        volume.forEach(x-> volumeIds.add(x.getId()));
         return volumeIds;
     }
 }
