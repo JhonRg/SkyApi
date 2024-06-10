@@ -1,4 +1,4 @@
-package skyapi.hexagonal.out.persistence.adapter;
+package skyapi.hexagonal.application.out.persistence.adapter;
 
 import skyapi.hexagonal.domain.model.Manga;
 import skyapi.hexagonal.domain.ports.out.MangaPersistencePort;

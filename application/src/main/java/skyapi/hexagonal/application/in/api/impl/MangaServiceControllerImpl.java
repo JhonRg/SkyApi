@@ -33,7 +33,7 @@ public class MangaServiceControllerImpl implements MangaServiceController {
     @Override
     public MangaDTO addManga(MangaDTO dto) {
         Manga toSave = MangaMapper.fromDtoToModel(dto);
-        service.addManga(toSave);
-        return MangaMapper.fromModelToDto(toSave);
+        Manga savedManga = service.addManga(toSave);
+        return MangaMapper.fromModelToDto(savedManga);
     }
 }

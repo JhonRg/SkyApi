@@ -8,7 +8,7 @@ import skyapi.hexagonal.domain.model.Manga;
 
 import java.util.ArrayList;
 
-public class MangaMapper implements GenericMapper<Manga, MangaDTO> {
+public class MangaMapper implements GenericMapper {
 
     public static MangaDTO fromModelToDto(Manga model) {
         if(model == null) return MangaDTO.builder().build();

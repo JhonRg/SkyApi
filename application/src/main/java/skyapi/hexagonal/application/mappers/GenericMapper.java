@@ -2,7 +2,7 @@ package skyapi.hexagonal.application.mappers;
 
 import org.springframework.beans.BeanUtils;
 
-public interface GenericMapper<D, M> {
+public interface GenericMapper {
     static <D, M> void fromModelToDto(D dto, M model){
         BeanUtils.copyProperties(model, dto);
     }

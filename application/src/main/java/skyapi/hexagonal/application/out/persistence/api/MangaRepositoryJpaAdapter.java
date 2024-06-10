@@ -1,4 +1,4 @@
-package skyapi.hexagonal.out.persistence.api;
+package skyapi.hexagonal.application.out.persistence.api;
 
 import skyapi.hexagonal.domain.model.Manga;
 
