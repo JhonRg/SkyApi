@@ -19,9 +19,7 @@ public class MangaServiceControllerImpl implements MangaServiceController {
     @Override
     public List<MangaDTO> listMangas() {
         List<MangaDTO> mangas = new ArrayList<>();
-        service.listMangas().forEach(manga -> {
-            mangas.add(MangaMapper.fromModelToDto(manga));
-        });
+        service.listMangas().forEach(manga -> mangas.add(MangaMapper.fromModelToDto(manga)));
         return mangas;
     }
 

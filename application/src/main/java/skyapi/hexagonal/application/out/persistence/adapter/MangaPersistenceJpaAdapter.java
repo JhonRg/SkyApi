@@ -22,13 +22,15 @@ public class MangaPersistenceJpaAdapter implements MangaPersistencePort {
     @Override
     public Manga create(Manga manga) {
         Manga response = Manga.builder().build();
-        return mangaRepositoryJpaAdapter.create(manga);
+        response =  mangaRepositoryJpaAdapter.create(manga);
+        return response;
     }
 
     @Override
     public Manga read(Long id) {
         Manga response = Manga.builder().build();
-        return mangaRepositoryJpaAdapter.read(id);
+        response = mangaRepositoryJpaAdapter.read(id);
+        return response;
     }
 
     //TODO: Revisar el porque necesita Long, si los ID's los creamos en negocio? o no?
