@@ -8,6 +8,8 @@ import java.util.List;
 public class MangaPersistenceJpaAdapter implements MangaPersistencePort {
 
     private final MangaPersistencePort mangaRepositoryJpaAdapter;
+    //Se emplea desde @Configuration
+    @SuppressWarnings("unused")
     public MangaPersistenceJpaAdapter(MangaPersistencePort mangaRepositoryJpaAdapter){
         this.mangaRepositoryJpaAdapter = mangaRepositoryJpaAdapter;
     }

@@ -10,6 +10,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
+@SuppressWarnings("unused")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

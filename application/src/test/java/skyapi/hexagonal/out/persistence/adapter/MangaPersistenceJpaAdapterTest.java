@@ -4,22 +4,23 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import skyapi.hexagonal.application.common.MangaTestCase;
-import skyapi.hexagonal.out.persistence.api.MangaRepositoryJpaAdapter;
+import skyapi.hexagonal.application.out.persistence.adapter.MangaPersistenceJpaAdapter;
 import skyapi.hexagonal.domain.model.Manga;
+import skyapi.hexagonal.domain.ports.out.MangaPersistencePort;
 
 import java.util.List;
 
 import static org.mockito.Mockito.*;
 
-public class MangaPersistenceAdapterTest extends MangaTestCase {
+public class MangaPersistenceJpaAdapterTest extends MangaTestCase {
 
-    private MangaRepositoryJpaAdapter repository;
-    private MangaPersistenceAdapter tested;
+    private MangaPersistencePort repository;
+    private MangaPersistenceJpaAdapter tested;
 
     @BeforeEach
     void setUp(){
-        repository = mock(MangaRepositoryJpaAdapter.class);
-        tested = new MangaPersistenceAdapter(repository);
+        repository = mock(MangaPersistencePort.class);
+        tested = new MangaPersistenceJpaAdapter(repository);
     }
 
     /**
