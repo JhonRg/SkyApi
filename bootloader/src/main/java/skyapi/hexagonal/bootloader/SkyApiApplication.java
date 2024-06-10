@@ -1,11 +1,11 @@
-package skyapi.hexagonal.infrastructure.rest.controller;
+package skyapi.hexagonal.bootloader;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HexagonalApplicationLauncher {
+public class SkyApiApplication {
     public static void main(String[] args) {
-        SpringApplication.run(HexagonalApplicationLauncher.class);
+        SpringApplication.run(SkyApiApplication.class);
     }
 }

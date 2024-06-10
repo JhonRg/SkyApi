@@ -13,7 +13,11 @@
     <name>adapter-rest</name>
     <description>adapter-rest</description>
 
-
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
         <dependency>
@@ -21,18 +25,32 @@
             <artifactId>spring-context</artifactId>
             <version>6.1.8</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
             <version>6.1.8</version>
         </dependency>
+        <dependency>
+            <groupId>skyapi.hexagonal</groupId>
+            <artifactId>application</artifactId>
+            <version>${skyapi.hexgonal.application.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>skyapi.hexagonal</groupId>
+            <artifactId>domain</artifactId>
+            <version>${skyapi.hexgonal.application.version}</version>
+        </dependency>
     </dependencies>
 
-    <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>skyapi.hexagonal.infrastructure.rest.AdapterRestApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

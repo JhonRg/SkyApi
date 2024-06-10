@@ -1,4 +1,4 @@
-package skyapi.hexagonal.infrastructure.rest.controller;
+package skyapi.hexagonal.bootloader;
 
 import org.springframework.context.annotation.Configuration;
 
