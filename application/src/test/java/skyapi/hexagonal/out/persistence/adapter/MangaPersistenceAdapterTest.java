@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import skyapi.hexagonal.application.common.MangaTestCase;
-import skyapi.hexagonal.out.persistence.api.MangaRepositoryAdapter;
+import skyapi.hexagonal.out.persistence.api.MangaRepositoryJpaAdapter;
 import skyapi.hexagonal.domain.model.Manga;
 
 import java.util.List;
@@ -13,12 +13,12 @@ import static org.mockito.Mockito.*;
 
 public class MangaPersistenceAdapterTest extends MangaTestCase {
 
-    private MangaRepositoryAdapter repository;
+    private MangaRepositoryJpaAdapter repository;
     private MangaPersistenceAdapter tested;
 
     @BeforeEach
     void setUp(){
-        repository = mock(MangaRepositoryAdapter.class);
+        repository = mock(MangaRepositoryJpaAdapter.class);
         tested = new MangaPersistenceAdapter(repository);
     }
 

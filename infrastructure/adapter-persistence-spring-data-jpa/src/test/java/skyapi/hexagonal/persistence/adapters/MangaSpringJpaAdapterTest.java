@@ -4,10 +4,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import skyapi.hexagonal.application.mappers.MangaMapper;
 import skyapi.hexagonal.common.MangaTestCase;
 import skyapi.hexagonal.domain.model.Manga;
 import skyapi.hexagonal.dto.MangaDTO;
-import skyapi.hexagonal.mappers.MangaMapper;
 import skyapi.hexagonal.persistence.jpa.adapters.MangaSpringJpaAdapter;
 import skyapi.hexagonal.persistence.jpa.repositories.MangaRepository;
 

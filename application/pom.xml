@@ -12,11 +12,14 @@
     <artifactId>application</artifactId>
     <name>application</name>
     <description>application</description>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <lombok.version>1.18.32</lombok.version>
         <skyapi.domain.version>0.0.1-SNAPSHOT</skyapi.domain.version>
         <skyapi.infrastructure.version>0.0.1-SNAPSHOT</skyapi.infrastructure.version>
     </properties>
@@ -44,6 +47,12 @@
             <artifactId>mockito-core</artifactId>
             <version>5.12.0</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

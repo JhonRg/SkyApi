@@ -1,10 +1,10 @@
-package skyapi.hexagonal.domain.ports.in;
+package skyapi.hexagonal.domain.service;
 
 import skyapi.hexagonal.domain.model.Manga;
 
 import java.util.List;
 
-public interface MangaServiceController {
+public interface MangaService {
     List<Manga> listMangas();
     Manga getManga(Long id);
     Manga addManga(Manga manga);

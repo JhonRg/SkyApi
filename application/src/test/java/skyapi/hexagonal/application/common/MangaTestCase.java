@@ -1,10 +1,12 @@
 package skyapi.hexagonal.application.common;
 
-import skyapi.hexagonal.domain.model.*;
+import skyapi.hexagonal.domain.model.Author;
+import skyapi.hexagonal.domain.model.Editorial;
+import skyapi.hexagonal.domain.model.Manga;
+import skyapi.hexagonal.domain.model.MangaCategory;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import java.util.Random;
 
 public class MangaTestCase {

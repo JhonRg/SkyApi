@@ -1,4 +1,4 @@
-package skyapi.hexagonal.mappers;
+package skyapi.hexagonal.application.mappers;
 
 import org.springframework.beans.BeanUtils;
 

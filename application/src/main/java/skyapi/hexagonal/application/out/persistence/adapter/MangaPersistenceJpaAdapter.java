@@ -1,43 +1,42 @@
 package skyapi.hexagonal.out.persistence.adapter;
 
-import skyapi.hexagonal.out.persistence.api.MangaRepositoryAdapter;
 import skyapi.hexagonal.domain.model.Manga;
 import skyapi.hexagonal.domain.ports.out.MangaPersistencePort;
 
 import java.util.List;
 
-public class MangaPersistenceAdapter implements MangaPersistencePort {
+public class MangaPersistenceJpaAdapter implements MangaPersistencePort {
 
-    private final MangaRepositoryAdapter mangaRepositoryAdapter;
-    public MangaPersistenceAdapter(MangaRepositoryAdapter mangaRepositoryAdapter){
-        this.mangaRepositoryAdapter = mangaRepositoryAdapter;
+    private final MangaPersistencePort mangaRepositoryJpaAdapter;
+    public MangaPersistenceJpaAdapter(MangaPersistencePort mangaRepositoryJpaAdapter){
+        this.mangaRepositoryJpaAdapter = mangaRepositoryJpaAdapter;
     }
 
     @Override
     public List<Manga> getAllMangas() {
-        return mangaRepositoryAdapter.getAllMangas();
+        return mangaRepositoryJpaAdapter.getAllMangas();
     }
 
     @Override
     public Manga create(Manga manga) {
         Manga response = Manga.builder().build();
-        return mangaRepositoryAdapter.create(manga);
+        return mangaRepositoryJpaAdapter.create(manga);
     }
 
     @Override
     public Manga read(Long id) {
         Manga response = Manga.builder().build();
-        return mangaRepositoryAdapter.read(id);
+        return mangaRepositoryJpaAdapter.read(id);
     }
 
     //TODO: Revisar el porque necesita Long, si los ID's los creamos en negocio? o no?
     @Override
     public Manga update(Long id, Manga manga) {
-        return mangaRepositoryAdapter.update(id, manga);
+        return mangaRepositoryJpaAdapter.update(id, manga);
     }
 
     @Override
     public void delete(Long id) {
-         mangaRepositoryAdapter.delete(id);
+         mangaRepositoryJpaAdapter.delete(id);
     }
 }

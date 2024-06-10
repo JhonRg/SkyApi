@@ -12,10 +12,7 @@
     <artifactId>adapter-persistence-spring-data-jpa</artifactId>
     <name>adapter-persistence-spring-data-jpa</name>
     <description>adapter-persistence-spring-data-jpa</description>
-
-    <properties>
-
-    </properties>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>

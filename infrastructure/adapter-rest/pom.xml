@@ -12,6 +12,7 @@
     <artifactId>adapter-rest</artifactId>
     <name>adapter-rest</name>
     <description>adapter-rest</description>
+    <packaging>pom</packaging>
 
     <dependencies>
         <dependency>

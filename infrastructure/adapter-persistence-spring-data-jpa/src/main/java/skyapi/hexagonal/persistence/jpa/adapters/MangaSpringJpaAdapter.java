@@ -1,7 +1,7 @@
 package skyapi.hexagonal.persistence.jpa.adapters;
 
-import skyapi.hexagonal.out.persistence.api.MangaRepositoryAdapter;
 import skyapi.hexagonal.domain.model.Manga;
+import skyapi.hexagonal.domain.ports.out.MangaPersistencePort;
 import skyapi.hexagonal.persistence.jpa.repositories.MangaRepository;
 
 import javax.persistence.EntityExistsException;
@@ -9,7 +9,7 @@ import javax.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.Optional;
 
-public class MangaSpringJpaAdapter implements MangaRepositoryAdapter {
+public class MangaSpringJpaAdapter implements MangaPersistencePort {
 
     private final MangaRepository mangaRepository;
     public MangaSpringJpaAdapter(MangaRepository mangaRepository) {
