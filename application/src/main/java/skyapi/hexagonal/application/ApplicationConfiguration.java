@@ -7,8 +7,8 @@ import skyapi.hexagonal.domain.service.MangaService;
 
 @Configuration
 public class ApplicationConfiguration {
-    @Bean
-    public MangaServiceControllerImpl mangaServiceControllerImpl (MangaService mangaService){
-        return new MangaServiceControllerImpl(mangaService);
-    }
+//    @Bean
+//    public MangaServiceControllerImpl mangaServiceControllerImpl (MangaService mangaService){
+//        return new MangaServiceControllerImpl(mangaService);
+//    }
 }

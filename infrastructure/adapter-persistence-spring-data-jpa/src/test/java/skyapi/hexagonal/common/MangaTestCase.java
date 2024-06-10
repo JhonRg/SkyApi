@@ -1,11 +1,11 @@
 package skyapi.hexagonal.common;
 
 import org.springframework.beans.BeanUtils;
+import skyapi.hexagonal.application.dto.MangaDTO;
 import skyapi.hexagonal.domain.model.Author;
 import skyapi.hexagonal.domain.model.Editorial;
 import skyapi.hexagonal.domain.model.Manga;
 import skyapi.hexagonal.domain.model.MangaCategory;
-import skyapi.hexagonal.dto.MangaDTO;
 
 public class MangaTestCase {
     protected Manga getMangaForTest(){

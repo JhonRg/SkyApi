@@ -15,13 +15,13 @@ public class DataSourceConfiguration {
      * Defining the data source programmatically by using the utility DataSourceBuilder()
      * This config could replace the spring.datasource configuration
      */
-    @Bean
-    public DataSource dataSource() {
-        return DataSourceBuilder.create()
-                .driverClassName("com.mysql.cj.jdbc.Driver")
-                .url("jdbc:mysql://localhost:3306/jpaDB")
-                .build();
-    }
+//    @Bean
+//    public DataSource dataSource() {
+//        return DataSourceBuilder.create()
+//                .driverClassName("com.mysql.cj.jdbc.Driver")
+//                .url("jdbc:mysql://localhost:3306/jpaDB")
+//                .build();
+//    }
 
 //    @Bean
 //    CommandLineRunner initDataSource(UserSpringJpaAdapater userSpringJpaAdapater) {
