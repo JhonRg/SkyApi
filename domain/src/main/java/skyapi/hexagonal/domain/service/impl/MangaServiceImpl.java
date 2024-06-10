@@ -8,7 +8,7 @@ import skyapi.hexagonal.domain.ports.out.MangaPersistencePort;
 
 import java.util.List;
 
-@Service
+
 public class MangaServiceImpl implements MangaService {
 
     MangaPersistencePort repository;
