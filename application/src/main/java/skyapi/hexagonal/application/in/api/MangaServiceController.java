@@ -1,6 +1,6 @@
 package skyapi.hexagonal.application.in.api;
 
-import skyapi.hexagonal.dto.MangaDTO;
+import skyapi.hexagonal.application.dto.MangaDTO;
 
 import java.util.List;
 

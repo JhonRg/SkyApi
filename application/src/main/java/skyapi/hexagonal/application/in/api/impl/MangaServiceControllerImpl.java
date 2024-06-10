@@ -1,11 +1,11 @@
 package skyapi.hexagonal.application.in.api.impl;
 
 import org.springframework.stereotype.Service;
+import skyapi.hexagonal.application.dto.MangaDTO;
 import skyapi.hexagonal.application.in.api.MangaServiceController;
 import skyapi.hexagonal.application.mappers.MangaMapper;
 import skyapi.hexagonal.domain.model.Manga;
 import skyapi.hexagonal.domain.service.MangaService;
-import skyapi.hexagonal.dto.MangaDTO;
 
 import java.util.ArrayList;
 import java.util.List;

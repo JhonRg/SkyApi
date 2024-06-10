@@ -1,9 +1,9 @@
 package skyapi.hexagonal.application.mappers;
 
+import skyapi.hexagonal.application.dto.MangaDTO;
 import skyapi.hexagonal.domain.model.Author;
 import skyapi.hexagonal.domain.model.MangaCategory;
 import skyapi.hexagonal.domain.model.Volume;
-import skyapi.hexagonal.dto.MangaDTO;
 import skyapi.hexagonal.domain.model.Manga;
 
 import java.util.ArrayList;

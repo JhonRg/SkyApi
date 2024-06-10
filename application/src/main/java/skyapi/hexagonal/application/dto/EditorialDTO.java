@@ -1,4 +1,4 @@
-package skyapi.hexagonal.dto;
+package skyapi.hexagonal.application.dto;
 
 import lombok.Builder;
 import lombok.Data;
